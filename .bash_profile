@@ -1,5 +1,5 @@
-if [ -f ~/.bash/.git-completion.bash ]; then
-  . ~/.bash/.git-completion.bash
+if [ -f ~/dotfiles/.git-completion.bash ]; then
+  . ~/dotfiles/.git-completion.bash
 fi
 
 eval "$(hub alias -s)"
@@ -7,7 +7,7 @@ eval "$(hub alias -s)"
 export PATH="/Users/kirkbater/.composer/vendor/bin:$PATH"
 export EDITOR=vim
 export VISUAL="$EDITOR"
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
+export GITAWAREPROMPT=~/dotfiles/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
 #   -------------------------------
