@@ -1,0 +1,11 @@
+[user]
+	name = Kirk Bater
+	email = kxbtwc@rit.edu
+[push]
+	default = simple
+[alias]
+	undo-commit = reset --soft HEAD^
+[core]
+	excludesfile = /Users/kirkbater/.gitignore_global
+[credential]
+	helper = osxkeychain
