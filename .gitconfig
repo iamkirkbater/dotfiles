@@ -1,11 +1,21 @@
 [user]
 	name = Kirk Bater
-	email = kxbtwc@rit.edu
+	email = kirk.bater@gmail.com
 [push]
 	default = simple
 [alias]
 	undo-commit = reset --soft HEAD^
+	pr = pull-request -m
+	git = !exec git
 [core]
 	excludesfile = /Users/kirkbater/.gitignore_global
+	editor = /usr/bin/vim
 [credential]
 	helper = osxkeychain
+[hub]
+[http]
+	sslVerify = true
+[hub]
+	host = github.com
+[http "https://gopkg.in"]
+	followRedirects = true
