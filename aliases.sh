@@ -35,6 +35,15 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 
+alias zshrc="$EDITOR ~/.zshrc"
+alias vimrc="$EDITOR ~/.vimrc"
+alias aliases="$EDITOR ~/dotfiles/aliases.sh"
+
+alias cat='bat'
+alias ping='prettyping --nolegend'
+alias top='sudo htop'
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
@@ -203,35 +212,8 @@ alias ws=webstorm
 alias stackmaster=stack_master
 alias stack-master=stack_master
 alias sm=stack_master
-alias sq=./node_modules/.bin/sequelize
+alias tf=terraform
 
 source /usr/local/bin/aws_zsh_completer.sh
 
-alias cover='npm run coverage'
-alias opencover='open ./coverage/lcov-report/index.html'
-
-# ==================================================================
-# Cago
-# ==================================================================
-# Lists the available profiles
-alias cagol='source /usr/local/bin/cago.sh list'
-
-# Resync and refresh all profiles
-alias cagor='source /usr/local/bin/cago.sh refresh'
-
-# Switch to another profile
-alias cagos='source /usr/local/bin/cago.sh switch --config ~/.cago.yml'
-
-export CAGO_CONFIG_URL=https://github.build.ge.com/raw/SECC/cago-config/master/cago-power.yaml
-
-# AWS Environment Variables to -e vars function
-function awsEnvVars() {
-  MODIFIER=$1
-
-  if [ -z $1 ]
-  then
-    MODIFIER=' -e '
-  fi
-  echo "${MODIFIER} `env | grep AWS | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/'"${MODIFIER}"'/g'`"
-}
 

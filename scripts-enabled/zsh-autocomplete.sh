@@ -1,0 +1,1 @@
+/Users/kirkbator/dotfiles/scripts-available/zsh-autocomplete.sh

@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kirkbater/.oh-my-zsh
+export ZSH=/Users/kirkbator/.oh-my-zsh
+export XDG_CONFIG_HOME=$HOME
 
 # Export Vim as default editor
 export EDITOR=vim
@@ -54,7 +55,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker aws go)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,6 +88,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:$PATH"
 
 for f in ~/dotfiles/scripts-enabled/*; do source $f; done
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+bindkey "^U" backward-kill-line
+
+export PATH="/Users/kirkbator/.local/share/virtualenvs/bot-VIPb9fAU/bin:/usr/local/opt/asdf/shims:/usr/local/opt/asdf/bin:/Users/kirkbator/local/bin:/Users/kirkbator/bin:/usr/local/bin:/Users/kirkbator/local/bin:/Users/kirkbator/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public/:/Users/kirkbator/.local/bin:/Users/kirkbator/local/bin:/Users/kirkbator/bin://Users/kirkbator/Projects/go/bin://Users/kirkbator/Projects/go/bin://Users/kirkbator/Projects/go/bin:/Users/kirkbator/.vimpkg/bin"

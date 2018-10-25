@@ -1,0 +1,1 @@
+/Users/kirkbator/dotfiles/scripts-available/asdf.sh

@@ -35,6 +35,7 @@
 ehthumbs.db
 Thumbs.db
 
-# PHPStorm files #
+# Editor files #
 ##################
 .idea
+*.swp
