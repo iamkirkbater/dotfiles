@@ -53,10 +53,10 @@ set mouse=a
 let g:jedi#documentation_command = ""
 
 " Make ctrl+hjkl switch focus in that direction
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <down> <C-W><C-J>
+nnoremap <up> <C-W><C-K>
+nnoremap <right> <C-W><C-L>
+nnoremap <left> <C-W><C-H>
 
 " File
 set undofile
@@ -79,7 +79,7 @@ syntax on
 "NERDTree Stuff
 map <C-o> :NERDTreeToggle<CR>
 
-set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,__pycache__,.*_cache
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,__pycache__,.*_cache,__init__.py,.terraform,.git
 let NERDTreeRespectWildIgnore=1
 
 let NERDTreeShowHidden=1
@@ -112,32 +112,18 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-""" Custom FileType Options
-" Set a column at 81 chars for line width
-" Python
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with colorcolumn=81 textwidth=79
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\]%\\@=%m
-let python_highlight_all = 1
 
-" Add the virtualenv's site-packages to vim path
-if has('python')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-endif
+au BufNewFile,BufRead Jenkinsfile* setf groovy
+
+au BufNewFile postmortem-*.md 0r ~/.vim/templates/postmortem-template.md
 
 let g:terraform_fmt_on_save=1
 autocmd FileType terraform setlocal shiftwidth=2 tabstop=2
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+autocmd Filetype sh setlocal shiftwidth=2 tabstop=2
 
 " Triger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -152,3 +138,8 @@ autocmd FileChangedShellPost *
 set rtp+=/Users/kirkbator/.local/lib/python3.6/site-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
+
+" Remap delete to go to the null register
+nnoremap d "_d
+vnoremap d "_d
+

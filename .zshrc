@@ -96,3 +96,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 bindkey "^U" backward-kill-line
 
 export PATH="/Users/kirkbator/.local/share/virtualenvs/bot-VIPb9fAU/bin:/usr/local/opt/asdf/shims:/usr/local/opt/asdf/bin:/Users/kirkbator/local/bin:/Users/kirkbator/bin:/usr/local/bin:/Users/kirkbator/local/bin:/Users/kirkbator/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public/:/Users/kirkbator/.local/bin:/Users/kirkbator/local/bin:/Users/kirkbator/bin://Users/kirkbator/Projects/go/bin://Users/kirkbator/Projects/go/bin://Users/kirkbator/Projects/go/bin:/Users/kirkbator/.vimpkg/bin"
+
+eval "$(hub alias -s)"
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

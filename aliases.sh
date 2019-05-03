@@ -213,6 +213,8 @@ alias stackmaster=stack_master
 alias stack-master=stack_master
 alias sm=stack_master
 alias tf=terraform
+alias tfqa='terraform workspace select qa'
+alias tfprod='terraform workspace select production'
 
 source /usr/local/bin/aws_zsh_completer.sh
 
