@@ -41,6 +41,12 @@ filetype plugin indent on
 " Search
 set hlsearch
 nnoremap <leader>h :nohlsearch<cr>
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ack_autofold_results = 1
+cnoreabbrev ack Ack!
+cnoreabbrev ag Ack!
+autocmd BufAdd * exe "cd" fnameescape(getcwd())
+nnoremap <Leader>f :Ack!<Enter>
 
 " Navigation
 set number
@@ -143,3 +149,6 @@ set t_Co=256
 nnoremap d "_d
 vnoremap d "_d
 
+let g:jedi#rename_command = ""
+let g:jedi#goto_command = "<leader>g"
+let g:jedi#goto_assignments_command = ""
