@@ -1,0 +1,1 @@
+../scripts-available/go.sh
