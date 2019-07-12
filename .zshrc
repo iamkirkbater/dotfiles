@@ -2,7 +2,7 @@
 export PATH=$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/dotfiles/.oh-my-zsh
 export XDG_CONFIG_HOME=$HOME
 
 # Export Vim as default editor
