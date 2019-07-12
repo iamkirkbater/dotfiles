@@ -1,7 +1,0 @@
-brew "git"
-brew "bat"
-brew "hub"
-brew "zsh-syntax-highlighting"
-brew "zsh-autosuggestions"
-brew "direnv"
-brew "asdf"
