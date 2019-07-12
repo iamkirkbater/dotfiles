@@ -1,1 +1,0 @@
-/Users/kirkbator/dotfiles/scripts-available/iterm.sh
