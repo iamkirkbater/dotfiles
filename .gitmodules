@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/current-func-info.vim"]
 	path = .vim/bundle/current-func-info.vim
 	url = git@github.com:tyru/current-func-info.vim
+[submodule ".tmux"]
+	path = .tmux
+	url = https://github.com/gpakosz/.tmux.git
