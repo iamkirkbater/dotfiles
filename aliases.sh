@@ -216,6 +216,4 @@ alias tf=terraform
 alias tfqa='terraform workspace select qa'
 alias tfprod='terraform workspace select production'
 
-source /usr/local/bin/aws_zsh_completer.sh
-
-
+complete -C "`which aws_completer`" aws
