@@ -208,12 +208,8 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 #   -----------------------------------------------------------------------------------
     alias screensaverDesktop='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background'
 
-alias ws=webstorm
-alias stackmaster=stack_master
-alias stack-master=stack_master
-alias sm=stack_master
 alias tf=terraform
-alias tfqa='terraform workspace select qa'
-alias tfprod='terraform workspace select production'
 
 complete -C "`which aws_completer`" aws
+
+alias rsa='cat ~/.ssh/id_rsa.pub'

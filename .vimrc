@@ -152,3 +152,17 @@ vnoremap d "_d
 let g:jedi#rename_command = ""
 let g:jedi#goto_command = "<leader>g"
 let g:jedi#goto_assignments_command = ""
+
+let g:airline_powerline_fonts = 1
+
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+set updatetime=50
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
