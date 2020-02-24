@@ -55,7 +55,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker aws go)
+plugins=(git docker aws go ssh-agent zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,6 +93,12 @@ for f in ~/dotfiles/scripts-enabled/*; do source $f; done
 
 if [ -d ~/workdotfiles ]; then
     [ -d ~/workdotfiles/scripts-enabled ] && for f in ~/workdotfiles/scripts-enabled/*; do source $f; done
+    [ -d ~/workdotfiles/bin ] && export PATH=$PATH:$HOME/workdotfiles/bin
+fi
+
+if [ -d ~/hostdotfiles ]; then
+    [ -d ~/hostdotfiles/scripts-enabled ] && for f in ~/hostdotfiles/scripts-enabled/*; do source $f; done
+    [ -d ~/hostdotfiles/bin ] && export PATH=$PATH:$HOME/hostdotfiles/bin
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

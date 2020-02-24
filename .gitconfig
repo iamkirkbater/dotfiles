@@ -21,5 +21,6 @@
 	sslVerify = true
 [hub]
 	host = github.com
+	protocol = ssh
 [http "https://gopkg.in"]
 	followRedirects = true
