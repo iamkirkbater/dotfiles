@@ -1,6 +1,7 @@
 [user]
 	name = Kirk Bater
 	email = kirk.bater@gmail.com
+	signingkey = 27B3D1D858DBD483B9A7807D33E2700A1A66898B
 [push]
 	default = simple
 [alias]
@@ -9,11 +10,12 @@
 	git = !exec git
 	branch-cleanup = !echo hello
 	bomb = !git-bomb
+	pp = !git-sync
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg = !"git lg1"
 [core]
-	excludesfile = /Users/kirkbator/.gitignore_global
+	excludesfile = /Users/kbater/.gitignore_global
 	editor = /usr/bin/vim
 [credential]
 	helper = osxkeychain
@@ -24,3 +26,7 @@
 	protocol = ssh
 [http "https://gopkg.in"]
 	followRedirects = true
+[pull]
+	rebase = true
+[url "ssh://git@gitlab.cee.redhat.com/"]
+    insteadOf = https://gitlab.cee.redhat.com/

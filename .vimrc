@@ -83,12 +83,10 @@ nnoremap <leader>q :q<cr>
 syntax on
 
 "NERDTree Stuff
-map <C-o> :NERDTreeToggle<CR>
-
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,__pycache__,.*_cache,__init__.py,.terraform,.git
 let NERDTreeRespectWildIgnore=1
-
 let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
 
 function! StartUp()
     if !argc() && !exists("s:std_in")
@@ -156,7 +154,7 @@ let g:jedi#goto_assignments_command = ""
 let g:airline_powerline_fonts = 1
 
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 set updatetime=50
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -166,3 +164,12 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+au FileType go nmap gi <Plug>(go-def-split)
+au FileType go nmap gs <Plug>(go-def-vertical)
+let $GINKGO_EDITOR_INTEGRATION = "true"
+
+noremap K     {
+noremap J     }
+noremap H     ^
+noremap L     $
+

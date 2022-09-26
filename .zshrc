@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/local/bin:$HOME/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotfiles/.oh-my-zsh
@@ -55,7 +55,8 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker aws go ssh-agent zsh-z)
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+plugins=(git docker aws go zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[[ -s "/Users/kbater/.gvm/scripts/gvm" ]] && source "/Users/kbater/.gvm/scripts/gvm"
 
 for f in ~/dotfiles/scripts-enabled/*; do source $f; done
 
@@ -111,3 +113,12 @@ eval "$(hub alias -s)"
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kbater/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kbater/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kbater/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kbater/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

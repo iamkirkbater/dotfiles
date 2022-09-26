@@ -41,3 +41,7 @@ Thumbs.db
 ##################
 .idea
 *.swp
+
+# General Development Files #
+#############################
+.envrc
