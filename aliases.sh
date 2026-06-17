@@ -34,6 +34,10 @@ mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and ju
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
+alias :q='exit'
+alias :qa='exit'
+alias :q!='exit'
+alias :wq='echo "not in vim"'
 
 alias zshrc="$EDITOR ~/.zshrc"
 alias vimrc="$EDITOR ~/.vimrc"
@@ -43,6 +47,10 @@ alias cat='bat'
 alias ping='prettyping --nolegend'
 alias top='sudo htop'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+function hg() {
+  awk "NR==1{print} /$1/"
+}
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
@@ -210,6 +218,14 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 
 alias tf=terraform
 
-complete -C "`which aws_completer`" aws
+if command -v aws_completer &> /dev/null
+then
+  complete -C "`which aws_completer`" aws
+fi
 
 alias rsa='cat ~/.ssh/id_rsa.pub'
+
+alias demomode='export ZSH_AUTOSUGGEST_HISTORY_IGNORE=*; clear'
+
+echoerr() { cat <<< "$@" 1>&2; }
+

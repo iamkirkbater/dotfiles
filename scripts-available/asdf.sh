@@ -1,2 +1,1 @@
-source /usr/local/opt/asdf/asdf.sh
-export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

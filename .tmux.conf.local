@@ -14,8 +14,9 @@
 set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
 
 # unbind Ctrl+A binding to allow emacs binding
-unbind C-a
-set-option -g prefix C-b
+# unbind C-a
+# set-option -g prefix C-b
+# bind-key a send-prefix
 
 # -- windows & pane creation ---------------------------------------------------
 
@@ -289,6 +290,8 @@ set -g mouse on
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
  unbind C-a
+ set -g prefix C-b
+ bind C-b send-prefix
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
@@ -298,3 +301,18 @@ set -g status-position top
 
 bind-key -n C-S-Left swap-window -t -1
 bind-key -n C-S-Right swap-window -t +1
+
+bind '"' split-window -c "#{pane_current_path}"
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on'
+
+# Fix mouse copy/paste
+unbind -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection-no-clear "pbcopy"

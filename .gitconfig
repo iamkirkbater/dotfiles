@@ -1,22 +1,29 @@
 [user]
 	name = Kirk Bater
 	email = kirk.bater@gmail.com
+	signingkey = 27B3D1D858DBD483B9A7807D33E2700A1A66898B
 [push]
 	default = simple
+    autoSetupRemote = true
 [alias]
 	undo-commit = reset --soft HEAD^
 	pr = pull-request -m
 	git = !exec git
 	branch-cleanup = !echo hello
 	bomb = !git-bomb
+	pp = !git-sync
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg = !"git lg1"
 [core]
-	excludesfile = /Users/kirkbator/.gitignore_global
+	excludesfile = /Users/kbater/.gitignore_global
 	editor = /usr/bin/vim
+    pager = delta
 [credential]
 	helper = osxkeychain
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true
 [http]
 	sslVerify = true
 [hub]
@@ -24,3 +31,20 @@
 	protocol = ssh
 [http "https://gopkg.in"]
 	followRedirects = true
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = zdiff3
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+# [remote "origin"]
+#     fetch = +refs/heads/*:refs/remotes/upstream/*
+#     fetch = +refs/tags/*:refs/tags/*
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

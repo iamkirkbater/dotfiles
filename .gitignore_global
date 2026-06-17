@@ -24,7 +24,7 @@ __pycache__
 
 # Logs and databases #
 ######################
-*.log
+*\.log
 *.sqlite
 
 # OS generated files #
@@ -41,3 +41,22 @@ Thumbs.db
 ##################
 .idea
 *.swp
+*.swo
+
+# General Development Files #
+#############################
+.envrc
+.terraform
+*terraform.tfstate*
+*.tfvars
+
+## Claude local settings
+.claude
+settings.local.json
+
+# general .token storage mechanism
+.token
+
+## Worktree directories and their contents
+.worktrees
+.worktrees/*
