@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/local/bin:$HOME/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+DOTFILES_PATH="$HOME/Projects/github.com/iamkirkbater/dotfiles"
+
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/dotfiles/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export XDG_CONFIG_HOME=$HOME
 
 # Export Vim as default editor
@@ -11,11 +13,7 @@ export EDITOR=vim
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
-
-export SPACESHIP_OPENSHIFT_SUFFIX=" "
-export SPACESHIP_TIME_PREFIX=" "
-export SPACESHIP_TIME_SHOW=true
+# ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,13 +51,13 @@ export SPACESHIP_TIME_SHOW=true
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=${DOTFILES_PATH}/.oh-my-zsh/custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker aws go ssh-agent zsh-z)
+plugins=(git docker aws golang ssh-agent z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,12 +90,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+test -e "${HOME}/.workdotfiles" && source "${HOME}/.workdotfiles"
 
-for f in ~/dotfiles/scripts-enabled/*; do source $f; done
+for f in $DOTFILES_PATH/scripts-enabled/*; do source $f; done
 
-if [ -d ~/workdotfiles ]; then
-    [ -d ~/workdotfiles/scripts-enabled ] && for f in ~/workdotfiles/scripts-enabled/*; do source $f; done
-    [ -d ~/workdotfiles/bin ] && export PATH=$PATH:$HOME/workdotfiles/bin
+if [ -n $WORKDOTFILES_PATH ] && [ -d $WORKDOTFILES_PATH ]; then
+    [ -d $WORKDOTFILES_PATH/scripts-enabled ] && for f in $WORKDOTFILES_PATH/scripts-enabled/*; do source $f; done
+    [ -d $WORKDOTFILES_PATH/bin ] && export PATH=$PATH:$WORKDOTFILES_PATH/bin
 fi
 
 if [ -d ~/hostdotfiles ]; then
@@ -105,16 +104,15 @@ if [ -d ~/hostdotfiles ]; then
     [ -d ~/hostdotfiles/bin ] && export PATH=$PATH:$HOME/hostdotfiles/bin
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${DOTFILES_PATH}/.iterm2_shell_integration.zsh" && source "${DOTFILES_PATH}/.iterm2_shell_integration.zsh"
 
 bindkey "^U" backward-kill-line
 
-eval "$(hub alias -s)"
-
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/opt/spaceship/spaceship.zsh
 
 ## Load Completions
 autoload -U compinit

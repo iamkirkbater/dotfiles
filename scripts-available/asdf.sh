@@ -1,1 +1,1 @@
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $(brew --prefix)/opt/asdf/share/zsh/site-functions/_asdf

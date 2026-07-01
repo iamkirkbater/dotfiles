@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source ~/dotfiles/aliases.sh
+source $DOTFILES_PATH/aliases.sh
 
