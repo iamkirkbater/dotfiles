@@ -8,4 +8,6 @@ ln -sf $(pwd)/.tmux.conf.local $HOME/.tmux.conf.local
 ln -sf $(pwd)/.vim $HOME/.vim
 ln -sf $(pwd)/.vimrc $HOME/.vimrc
 
+ln -sf $(pwd)/config.ghostty $HOME/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+
 vim +PluginInstall +qall
