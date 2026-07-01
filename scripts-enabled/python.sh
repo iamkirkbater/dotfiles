@@ -1,1 +1,1 @@
-/Users/kbater/dotfiles/scripts-available/python.sh
+../scripts-available/python.sh

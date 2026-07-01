@@ -1,1 +1,1 @@
-/Users/kbater/dotfiles/scripts-available/ssh-agent.sh
+../scripts-available/ssh-agent.sh

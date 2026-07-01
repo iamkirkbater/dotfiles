@@ -1,1 +1,1 @@
-/Users/kbater/dotfiles/scripts-available/kerberos.sh
+../scripts-available/kerberos.sh
