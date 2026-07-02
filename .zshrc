@@ -118,3 +118,7 @@ source $(brew --prefix)/opt/spaceship/spaceship.zsh
 autoload -U compinit
 compinit
 fpath+=(~/.zsh_completions/)
+
+export NVM_DIR="$HOME/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
