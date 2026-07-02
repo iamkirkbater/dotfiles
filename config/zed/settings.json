@@ -1,0 +1,96 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "document_folding_ranges": "on",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "tree_view": true,
+    "dock": "left"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "model": "claude-opus-4-6"
+      },
+      "type": "registry"
+    }
+  },
+  "autosave": "on_focus_change",
+  "icon_theme": "Symbols Icon Theme",
+  "format_on_save": "off",
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "base_keymap": "JetBrains",
+  "ui_font_family": ".ZedMono",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": true,
+  "ui_font_size": 17.0,
+  "buffer_font_size": 17.0,
+  "theme": {
+    "mode": "dark",
+    "light": "macOS Classic Light",
+    "dark": "Ayu Dark",
+  },
+  "experimental.theme_overrides": {
+    "terminal.ansi.bright_black": "#000000ff",
+    "terminal.ansi.dim_black": "#ffffffff",
+  },
+  "file_types": {
+    "JavaScript": ["*.gs"]
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "experimental": {
+          "classRegex": [
+            "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]"
+          ]
+        }
+      }
+    }
+  },
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+      "use_on_type_format": true,
+      "remove_trailing_whitespace_on_save": true
+    },
+    "Diff": {
+      "soft_wrap": "editor_width"
+    }
+  }
+}
