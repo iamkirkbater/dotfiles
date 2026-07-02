@@ -37,6 +37,7 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 execute pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
+
 " 
 " Search
 set hlsearch
