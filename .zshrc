@@ -90,6 +90,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export SPACESHIP_CONFIG="$DOTFILES_PATH/config-partials/spaceship.zsh"
+
 test -e "${HOME}/.workdotfiles" && source "${HOME}/.workdotfiles"
 
 for f in $DOTFILES_PATH/scripts-enabled/*; do source $f; done

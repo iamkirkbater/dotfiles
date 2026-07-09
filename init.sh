@@ -15,17 +15,17 @@ ln -sf $(pwd)/config.ghostty $HOME/Library/Application\ Support/com.mitchellh.gh
 function partial_config_setup() {
   local partials_dir="config-partials"
 
-  config_dirs=$(find $partials_dir/* -type d)
-  config_files=$(find $partials_dir/* -type f)
+  config_dirs=$(find $partials_dir/* -type d | sed 's/config-partials\///')
+  config_files=$(find $partials_dir/* -type f | sed 's/config-partials\///')
 
   mkdir -p $HOME/.config
 
   for dir in $config_dirs; do
-    mkdir -p $HOME/.$dir
+    mkdir -p $HOME/.config/$dir
   done
 
-  for file in $config_files; do
-    ln -sf $(pwd)/$file $HOME/.$file
+  for file in $config_files; do;
+    ln -sf $(pwd)/config-partials/$file $HOME/.config/$file
   done
 }
 

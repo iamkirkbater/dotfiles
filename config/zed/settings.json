@@ -29,6 +29,7 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
+        "mode": "plan",
         "model": "claude-opus-4-6"
       },
       "type": "registry"
